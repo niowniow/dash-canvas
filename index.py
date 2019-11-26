@@ -5,7 +5,7 @@ from glob import glob
 import base64
 import dash
 
-import app1_seg as app1
+import app as app1
 import app2_correct_segmentation as app2
 import app3_background_removal as app3
 import app4_measure_length as app4

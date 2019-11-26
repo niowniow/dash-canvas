@@ -110,6 +110,17 @@
           "computed": false
         }
       },
+      "updateButtonTitle": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Title of update button",
+        "defaultValue": {
+          "value": "'Update'",
+          "computed": false
+        }
+      },
       "filename": {
         "type": {
           "name": "string"
@@ -132,7 +143,40 @@
           "computed": false
         }
       },
-      "json_data": {
+      "next_trigger": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Counter of how many times the next button was pressed\n(to be used mostly as input)",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
+      },
+      "prev_trigger": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Counter of how many times the prev button was pressed\n(to be used mostly as input)",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
+      },
+      "json_data_in": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Sketch content as JSON string, containing background image and\nannotations. Use utils.parse_json.parse_jsonstring to parse\nthis string.",
+        "defaultValue": {
+          "value": "''",
+          "computed": false
+        }
+      },
+      "json_data_out": {
         "type": {
           "name": "string"
         },

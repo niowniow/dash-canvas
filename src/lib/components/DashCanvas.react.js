@@ -20,10 +20,10 @@ export default class DashCanvas extends Component {
 
 DashCanvas.defaultProps = {
     filename: '',
-    json_data: '', image_content: '', trigger: 0,
+    json_data_in: '', json_data_out: '', image_content: '', trigger: 0, next_trigger: 0, prev_trigger: 0,
     width: 500, height: 500, scale: 1, lineWidth: 10,
     lineColor: 'red', tool: "pencil", zoom: 1,
-    goButtonTitle: 'Save', hide_buttons: []
+    goButtonTitle: 'Save', updateButtonTitle: 'Update', hide_buttons: []
 };
 
 DashCanvas.propTypes = {
@@ -82,6 +82,11 @@ DashCanvas.propTypes = {
      */
     goButtonTitle: PropTypes.string,
 
+    /**
+     * Title of update button
+     */
+    updateButtonTitle: PropTypes.string,
+
 
     /**
      * Name of image file to load (URL string)
@@ -95,12 +100,34 @@ DashCanvas.propTypes = {
      */
     trigger: PropTypes.number,
 
+
+    /**
+     * Counter of how many times the next button was pressed
+     * (to be used mostly as input)
+     */
+    next_trigger: PropTypes.number,
+
+
+    /**
+     * Counter of how many times the prev button was pressed
+     * (to be used mostly as input)
+     */
+    prev_trigger: PropTypes.number,
+
+
     /**
      * Sketch content as JSON string, containing background image and
      * annotations. Use utils.parse_json.parse_jsonstring to parse
      * this string.
      */
-    json_data: PropTypes.string,
+    json_data_in: PropTypes.string,
+
+        /**
+     * Sketch content as JSON string, containing background image and
+     * annotations. Use utils.parse_json.parse_jsonstring to parse
+     * this string.
+     */
+    json_data_out: PropTypes.string,
 
     /**
      * Names of buttons to hide. Names are "zoom", "pan", "line", "pencil",
